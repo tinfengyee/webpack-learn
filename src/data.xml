@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <to>Mary</to>
+  <from>John</from>
+  <body>
+    <item>A</item>
+    <item>B</item>
+    <item>C</item>
+  </body>
+  <heading>Reminder</heading>
+  <footer>Call Cindy on Tuesday</footer>
+</note>
