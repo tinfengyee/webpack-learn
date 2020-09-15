@@ -1,6 +1,9 @@
 {
   "name": "webpack-learn",
   "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
+  },
   "private": true,
   "repository": "https://gitee.com/tinfengyee/webpack-learn.git",
   "author": "lih <v_buglh@outlook.com>",
