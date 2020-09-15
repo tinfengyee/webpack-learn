@@ -1,0 +1,13 @@
+{
+  "name": "webpack-learn",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "https://gitee.com/tinfengyee/webpack-learn.git",
+  "author": "lih <v_buglh@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
