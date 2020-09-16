@@ -1,6 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
 
 module.exports = {
   mode: 'development',
@@ -38,26 +41,31 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '管理输出',
       template: 'index.html'
-    })
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+    new OptimizeCssAssetsPlugin({})
   ],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.scss$/i,
+        test: /\.(c|sc)ss$/i,
         use: [
           // 将 JS 字符串生成为 style 节点
           'style-loader',
+          MiniCssExtractPlugin.loader, // 生产环境打开
           // 将 CSS 转化成 CommonJS 模块
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader',
+          'sass-loader'
           // 将 Sass 编译成 CSS
-          'sass-loader',
         ],
       },
       {

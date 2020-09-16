@@ -1,6 +1,6 @@
-$base-color: #c6538c;
-$border-dark: rgba($base-color, 0.88);
-
-.alert {
-  border: 1px solid $border-dark;
+.hello {
+  font-weight: bold;
+  transform: translate(100px, 100px);
+  box-sizing: border-box;
+  display: flex;
 }
