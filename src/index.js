@@ -1,5 +1,7 @@
 import _ from 'lodash';
 import printMe from './print.js';
+import './style.css';
+import './test.scss';
 
 function component() {
   const element = document.createElement('div');
@@ -7,6 +9,7 @@ function component() {
 
   // lodash，现在通过一个 script 引入
   element.innerHTML = _.join(['Hello', 'weback'], ' ');
+  element.classList.add('hello')
 
   btn.innerHTML = '点击这里，然后查看 console！';
   btn.onclick = printMe;
@@ -16,4 +19,15 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+// document.body.appendChild(component()); 
+// 继续点击示例页面上的按钮， 你会发现控制台仍在打印旧的 printMe 函数。这是因为按钮的 onclick 事件处理函数仍然绑定在旧的 printMe 函数上。
+let element = component();
+document.body.appendChild(element);
+
+console.log(module);
+if (module.hot) {
+  module.hot.accept('./print.js', () => {
+    console.log('Accepting the updated printMe module!');
+    printMe();
+  })
+}

@@ -20,8 +20,7 @@ lerna-debug.log.*
 # dist file
 es
 lib
-# dist
-dist
+/dist
 /site
 changelog.generated.md
 test/coverage
