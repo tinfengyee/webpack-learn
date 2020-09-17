@@ -1,10 +1,13 @@
-const arr = [
-  new Promise(() => {}),
-  new Promise(() => {})
-]
-arr.map(item => {
-  console.log(item);
-})
+import React, { Component } from 'react';
+import ReactDom from 'react-dom';
+
+class App extends Component {
+  render() {
+    return <div>Hello World</div>
+  }
+}
+
+ReactDom.render(<App />, document.getElementById('root'));
 // import _ from 'lodash';
 // import printMe from './print.js';
 // import './style.scss';
