@@ -3,7 +3,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const prodConfig = {
   mode: 'production',
-  devtool: 'cheap-module-source-map',
+  // devtool: 'cheap-module-source-map',
   output: {
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].[contenthash].js',
@@ -18,14 +18,15 @@ const prodConfig = {
   module: {
     rules: [
       {
-        test: /\.(c|sc)ss$/i,
+        test: /\.(c|sc)ss$/,
         use: [
-          MiniCssExtractPlugin.loader, // 生产环境打开
+          MiniCssExtractPlugin.loader, // 提取CSS文件
           // 将 CSS 转化成 CommonJS 模块
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              // modules: true /* 使用 import style from './style.scss'; el.classList.add(style.red);*/
             }
           },
           'postcss-loader',

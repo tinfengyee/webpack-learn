@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import printMe from './print.js';
-import './style.css';
-import './test.scss';
+import './style.scss';
+import Icon from './icon.jpg';
 
 function component() {
   const element = document.createElement('div');
@@ -9,12 +9,16 @@ function component() {
 
   // lodash，现在通过一个 script 引入
   element.innerHTML = _.join(['Hello', 'weback'], ' ');
-  element.classList.add('hello')
+  element.classList.add('red');
 
   btn.innerHTML = '点击这里，然后查看 console！';
   btn.onclick = printMe;
 
   element.appendChild(btn);
+
+  const iconImg = new Image();
+  iconImg.src = Icon;
+  element.appendChild(iconImg);
 
   return element;
 }

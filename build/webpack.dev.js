@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const devConfig = {
   mode: 'development',
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
   output: {
     filename: '[name].js',
 		chunkFilename: '[name].js',
@@ -11,6 +11,7 @@ const devConfig = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
+    hotOnly: true, // 即使构建失败也不刷新
     open: false,
     port: 9000,
     proxy: {
@@ -31,17 +32,7 @@ const devConfig = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: [
-          // 将 JS 字符串生成为 style 节点
-          'style-loader',
-          // 将 CSS 转化成 CommonJS 模块
-          'css-loader',
-          'postcss-loader',
-        ],
-      },
-      {
-        test: /\.scss$/i,
+        test: /\.(c|sc)ss$/,
         use: [
           // 将 JS 字符串生成为 style 节点
           'style-loader',
@@ -49,7 +40,8 @@ const devConfig = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              // modules: true /* 使用 import style from './style.scss'; el.classList.add(style.red);*/
             }
           },
           'postcss-loader',

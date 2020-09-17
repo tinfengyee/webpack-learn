@@ -16,7 +16,7 @@ const commonConfig = {
   plugins: [
     new CleanWebpackPlugin({
       verbose: false,
-      cleanStaleWebpackAssets: false
+      cleanStaleWebpackAssets: true
     }),
     new HtmlWebpackPlugin({
       title: 'Title',
@@ -32,14 +32,15 @@ const commonConfig = {
             loader: 'url-loader',
             options: {
               name: '[name]_[hash].[ext]',
-              outputPath: 'images/',
+              outputPath: 'images',
+              // publicPath: '//CDN',
               limit: 10240
             }
           }
         ]
       },
       {
-        test: /\.(woff|woff2|ttf|otf)$/,
+        test: /\.(woff|woff2|ttf|otf|eot)$/,
         use: [
           'file-loader'
         ]
