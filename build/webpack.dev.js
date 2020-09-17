@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const devConfig = {
   mode: 'development',
-  devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
+  // devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
   output: {
     filename: '[name].js',
 		chunkFilename: '[name].js',

@@ -26,6 +26,11 @@ const commonConfig = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
+      {
         test: /\.(png|jpg|svg|gif)$/,
         use: [
           {

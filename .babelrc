@@ -1,0 +1,25 @@
+{
+  // "presets": [
+  //   [
+  //     "@babel/preset-env", // 写业务开发启用这个 ps: 从Babel 7.4.0开始，不推荐使用@babel/polyfill, 而直接包括core-js/stable
+  //     {
+  //       "useBuiltIns": "usage", // 按需引入 polyfill
+  //       "corejs": 3,
+  //       "modules": false // 启用将ES模块语法转换为其他模块类型的功能
+  //     }
+  //   ]
+  // ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime", //写库的时候启用这个, 已闭包形式注入, 不会污染全局环境
+      {
+        "absoluteRuntime": false,
+        "corejs": 3,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false,
+        "version": "7.0.0-beta.0"
+      }
+    ]
+  ]
+}
