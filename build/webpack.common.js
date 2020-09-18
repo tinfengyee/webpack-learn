@@ -7,7 +7,7 @@ const prodConfig = require('./webpack.prod');
 
 const commonConfig = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.ts'
   },
   output: {
     path: path.resolve(__dirname, '../dist')
@@ -31,6 +31,11 @@ const commonConfig = {
         loader: "babel-loader"
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.(png|jpg|svg|gif)$/,
         use: [
           {
@@ -51,7 +56,10 @@ const commonConfig = {
         ]
       }
     ]
-  }
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ], // 自动解析确定的扩展
+  },
 }
 
 module.exports = (env) => {
