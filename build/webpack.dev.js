@@ -58,7 +58,11 @@ module.exports = merge(commonConfig, {
       tree shaking, 去除未引用代码(dead code), dev 仅作提示,未真正去除;; prod默认配置true,并且默认开启new webpack.optimize.ModuleConcatenationPlugin();, 所以prod一般不用配置这个选项,。
       需要package.json配置sideEffects,在js引入css会被tk(因为没有导出), "sideEffects": ["**`/`*.css","**`/*``.scss",]
     */
-    usedExports: true,
+    // usedExports: true,
+    // runtimeChunk: 'single',
+    // splitChunks: {
+    //   chunks: 'all'
+    // }
                       
   }
 })
