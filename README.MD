@@ -16,4 +16,6 @@
 
 ## 链接
 
+> [bundle 分析(bundle analysis)](https://webpack.docschina.org/guides/code-splitting/#bundle-analysis)
+> [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)`推荐`
 > [官方术语](https://www.webpackjs.com/glossary/) , 在网站底部.
