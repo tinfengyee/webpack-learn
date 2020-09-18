@@ -69,7 +69,7 @@ const commonConfig = {
     /* 注意: webpack5配置略有不同 */ 
     splitChunks: {
       chunks: 'all',
-      minSize: 0, // 如lodash大于20kb才进行代码分割
+      minSize: 20000, // 如lodash大于20kb才进行代码分割
       // minRemainingSize: 0,
       maxSize: 0,
       minChunks: 1, // (lib)lodash被引用1次及以上
@@ -84,7 +84,7 @@ const commonConfig = {
           // filename: '[name].bundle.js'
         },
         default: {
-          minChunks: 1,
+          minChunks: 2,
           priority: -20,
           reuseExistingChunk: true,
           // filename: '[name].bundle.js'
