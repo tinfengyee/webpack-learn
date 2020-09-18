@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack.common');
 
-const devConfig = {
+module.exports = merge(commonConfig, {
   mode: 'development',
   // devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
   output: {
@@ -27,7 +29,7 @@ const devConfig = {
     }
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -50,7 +52,15 @@ const devConfig = {
         ],
       },
     ]
+  },
+  optimization: {
+    /*
+      tree shaking, 去除未引用代码(dead code), dev 仅作提示,未真正去除;; prod默认配置true,并且默认开启new webpack.optimize.ModuleConcatenationPlugin();, 所以prod一般不用配置这个选项,。
+      需要package.json配置sideEffects,在js引入css会被tk(因为没有导出), "sideEffects": ["**`/`*.css","**`/*``.scss",]
+    */
+    usedExports: true,
+                      
   }
-}
+})
 
-module.exports = devConfig;
+// module.exports = devConfig;

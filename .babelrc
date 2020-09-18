@@ -4,7 +4,7 @@
     [
       "@babel/preset-env", // 写业务开发启用这个 ps: 从Babel 7.4.0开始，不推荐使用@babel/polyfill, 而直接包括core-js/stable
       {
-        "useBuiltIns": "usage", // 按需引入 polyfill
+        "useBuiltIns": "usage", // 按需引入 polyfill(会主动注入)
         "corejs": 3,
         "modules": false // 启用将ES模块语法转换为其他模块类型的功能
       }

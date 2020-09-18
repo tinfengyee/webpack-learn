@@ -1,9 +1,12 @@
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack.common');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const prodConfig = {
+module.exports = merge(commonConfig, {
   mode: 'production',
-  // devtool: 'cheap-module-source-map',
+  devtool: 'cheap-module-source-map',
   output: {
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].[contenthash].js',
@@ -36,6 +39,4 @@ const prodConfig = {
       },
     ]
   }
-}
-
-module.exports = prodConfig;
+})

@@ -1,11 +1,12 @@
 {
   "name": "webpack-learn",
   "version": "1.0.0",
+  "sideEffects": false,
   "scripts": {
-    "dev": "webpack-dev-server --color --config ./build/webpack.common.js",
+    "dev": "webpack-dev-server --color --config ./build/webpack.dev.js",
     "watch": "webpack --watch",
-    "build:dev": "webpack --config ./build/webpack.common.js",
-    "build": "webpack --env.production --config ./build/webpack.common.js"
+    "build:dev": "webpack --config ./build/webpack.dev.js",
+    "build": "webpack --env.production --config ./build/webpack.prod.js"
   },
   "private": true,
   "repository": "https://gitee.com/tinfengyee/webpack-learn.git",
