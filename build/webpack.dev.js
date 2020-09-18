@@ -13,8 +13,8 @@ module.exports = merge(commonConfig, {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
-    hotOnly: true, // 即使构建失败也不刷新
-    open: false,
+    // hotOnly: true, // 即使构建失败也不刷新
+    open: true,
     port: 9000,
     proxy: {
       '/api': {

@@ -6,7 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const commonConfig = {
   entry: {
-    app: './src/index.js'
+    lodash: './src/lodash.js',
+    main: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, '../dist')
