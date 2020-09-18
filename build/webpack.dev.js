@@ -8,7 +8,7 @@ module.exports = merge(commonConfig, {
   // devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
   output: {
     filename: '[name].js',
-		chunkFilename: '[name].js',
+		// chunkFilename: '[name].js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -59,11 +59,8 @@ module.exports = merge(commonConfig, {
       需要package.json配置sideEffects,在js引入css会被tk(因为没有导出), "sideEffects": ["**`/`*.css","**`/*``.scss",]
     */
     // usedExports: true,
-    // runtimeChunk: 'single',
-    // splitChunks: {
-    //   chunks: 'all'
-    // }
-                      
+    // // runtimeChunk: 'single',
+    
   }
 })
 
