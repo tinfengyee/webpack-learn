@@ -1,7 +1,10 @@
 {
   "name": "webpack-learn",
   "version": "1.0.0",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --color --config ./build/webpack.dev.js",
     "watch": "webpack --watch",

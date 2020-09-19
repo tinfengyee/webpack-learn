@@ -1,4 +1,5 @@
-
+import './style.scss'
+console.log('haha');
 // import _ from 'lodash';
 
 // const element = document.createElement('div');
@@ -22,8 +23,8 @@
 //   });
 // })
 
-document.addEventListener('click', () => {
-  import(/* webpackPrefetch: true */'./test.js').then(({default: func}) => {
-    func();
-  })
-})
+// document.addEventListener('click', () => {
+//   import(/* webpackPrefetch: true */'./test.js').then(({default: func}) => {
+//     func();
+//   })
+// })
