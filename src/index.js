@@ -1,6 +1,11 @@
-import './assets/style.scss'
-console.log('haha ');
+console.log(this);
+
 // import _ from 'lodash';
+// import $ from 'jquery';
+
+// const dom = $('<div>');
+// dom.html(_.join(['Hello', 'Webpack'], '-'));
+// $('body').append(dom);
 
 // const element = document.createElement('div');
 // element.innerHTML = _.join(['Hello', 'webpack'], ' ');
