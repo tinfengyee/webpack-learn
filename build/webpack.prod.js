@@ -9,7 +9,7 @@ module.exports = merge(commonConfig, {
   // devtool: 'cheap-module-source-map',
   output: {
     filename: '[name].[contenthash].js',
-    chunkFilename: '[name]._chunk_[contenthash].js',
+    chunkFilename: '[name].c_[contenthash].js',
   },
   plugins: [
     new MiniCssExtractPlugin({

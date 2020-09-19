@@ -8,7 +8,7 @@ module.exports = merge(commonConfig, {
   // devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
   output: {
     filename: '[name].js',
-		// chunkFilename: '[name].js',
+		chunkFilename: '[name]_c.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

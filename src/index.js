@@ -1,5 +1,5 @@
-import './style.scss'
-console.log('haha');
+import './assets/style.scss'
+console.log('haha ');
 // import _ from 'lodash';
 
 // const element = document.createElement('div');
