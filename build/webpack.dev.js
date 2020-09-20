@@ -7,8 +7,9 @@ module.exports = merge(commonConfig, {
   mode: 'development',
   // devtool: 'eval-cheap-module-source-map', // cheap 没有列映射, module第三方模块映射
   output: {
-    filename: '[name].js',
-		chunkFilename: '[name].js',
+    // filename: '[name].js',
+    filename: '[name].[contenthash].js',
+		chunkFilename: '[name].[contenthash].js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -29,7 +30,7 @@ module.exports = merge(commonConfig, {
     }
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [

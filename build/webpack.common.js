@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 // const devConfig = require('./webpack.dev');
 // const prodConfig = require('./webpack.prod');
 
@@ -22,9 +22,9 @@ const commonConfig = {
       title: 'Title',
       template: 'index.html'
     }),
-    new webpack.ProvidePlugin({ // 垫片/ 预置依赖(自动帮你Import在头部)
-      '$': 'jquery'
-    })
+    // new webpack.ProvidePlugin({ // 垫片/ 预置依赖(自动帮你Import在头部)
+    //   '$': 'jquery'
+    // })
   ],
   module: {
     rules: [
@@ -34,12 +34,6 @@ const commonConfig = {
         use: [
           {
             loader: "babel-loader"
-          },
-          {
-            loader: 'imports-loader', // 与指南用法有差异, 查看plugin说明
-            options: {
-              wrapper: 'window',
-            }
           }
         ]
       },
@@ -75,7 +69,10 @@ const commonConfig = {
   },
   optimization: {
     // 抽离runtime, 默认值是 false：每个入口 chunk 中直接嵌入 runtime。 -- 如果打包[contenthash]没改动就变化了, 可以配置这个'single/runtime',防止文件缓存了.
-    // runtimeChunk: { name: entrypoint => `runtime~${entrypoint.name}` }, // 运行时文件,库和业务逻辑(模块)有关联, 通过使用 manifest 中的数据，runtime 将能够检索这些标识符，找出每个标识符背后对应的模块 (https://webpack.docschina.org/concepts/manifest/)
+    runtimeChunk: { name: entrypoint => `runtime~${entrypoint.name}` }, // 运行时文件,库和业务逻辑(模块)有关联, 通过使用 manifest 中的数据，runtime 将能够检索这些标识符，找出每个标识符背后对应的模块 (https://webpack.docschina.org/concepts/manifest/)
+    splitChunks: {
+      chunks: 'all'
+    },
     /*
       tree shaking, 去除未引用代码(dead code), dev 仅作提示,未真正去除;; prod默认配置true,并且默认开启new webpack.optimize.ModuleConcatenationPlugin();, 所以prod一般不用配置这个选项,。
       需要package.json配置sideEffects,在js引入css会被tk(因为没有导出), "sideEffects": ["**`/`*.css","**`/*``.scss",]
