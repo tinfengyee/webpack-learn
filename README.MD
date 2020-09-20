@@ -19,6 +19,8 @@
 > [bundle 分析(bundle analysis)](https://webpack.docschina.org/guides/code-splitting/#bundle-analysis)
 > [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)`推荐`
 > [官方术语](https://www.webpackjs.com/glossary/) , 在网站底部.
+> [Webpack4 入门手册（共 18 章）](https://github.com/pingan8787/Leo-JavaScript/blob/master/Cute-Webpack/introduction/README.md)
+> [Leo-JavaScript前端知识仓库-面试,基础](https://github.com/pingan8787/Leo-JavaScript)
 
 ## 其他
 
@@ -39,4 +41,4 @@ CLI
 npx eslint --init
 npx eslint src --fix
 ```
-(eslint-CLI)[https://eslint.bootcss.com/docs/user-guide/command-line-interface]
+(Eslint-CLI)https://eslint.bootcss.com/docs/user-guide/command-line-interface)
