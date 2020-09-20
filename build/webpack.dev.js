@@ -12,6 +12,7 @@ module.exports = merge(commonConfig, {
 		chunkFilename: '[name].[contenthash].js',
   },
   devServer: {
+    overlay: true, // 提示错误, 如eslint规范等
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
     // hotOnly: true, // 即使构建失败也不刷新

@@ -1,11 +1,11 @@
-import _ from 'lodash';
-import $ from 'jquery';
-import Test from './test';
+import _ from 'lodash'
+import $ from 'jquery'
+// import Test from './test'
 
-const dom = $('<div>');
-dom.html(_.join(['Hello', 'Webpack'], '-'));
+const dom = $('<div>')
+dom.html(_.join(['Hello', 'Webpack'], '-'))
 // dom.on('click', Test.bind(null, 'Hello World'))
-$('body').append(dom);
+$('body').append(dom)
 
 // const element = document.createElement('div');
 // element.innerHTML = _.join(['Hello', 'webpack'], ' ');

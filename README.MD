@@ -32,3 +32,11 @@
 > preload 并行方式开始加载
 > --懒加载肯能会有用户体验, 所以通过prefect先加载好,注意prefect有兼容性
 > **前端性能优化, 缓存并不是最重要的点, 应该转到code coverage代码覆盖率上面**
+
+**eslint**
+CLI
+```shell
+npx eslint --init
+npx eslint src --fix
+```
+(eslint-CLI)[https://eslint.bootcss.com/docs/user-guide/command-line-interface]
